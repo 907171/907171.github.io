@@ -1,0 +1,254 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+$premier-color: #2b2e4a;
+$secondary-color: #e84545;
+
+// awal Navbar
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        .nav-brand {
+            font-family: 'Yellowtail', cursive;
+            font-size: 2.5em;
+            color: whitesmoke;
+            z-index: 3;
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            li {
+                list-style: none;
+                padding: 0 3vh;
+                margin-top: 3px;
+                a {
+                    font-size: 1em;
+                }
+                a::after {
+                    content: '';
+                    display: block;
+                    background-color: none;
+                    width: 15px;
+                    height: 2px;
+                    margin: auto;
+                }
+                a:hover::after {
+                    background-color: $secondary-color;
+                }
+            }
+        }
+        .hamburger {
+            display: none;
+        }
+    }
+}
+// akhir Navbar
+button {
+    color: whitesmoke;
+    border: none;
+    background-color: $secondary-color;
+    padding: 15px 40px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+}
+a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+// awal section about
+section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: $premier-color;
+    overflow: hidden;
+    header {
+        width: 90%;
+        height: 80vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .container-header {
+            .hello {
+                font-size: 1.5em;
+                color: whitesmoke;
+            }
+            .name {
+                font-size: 6em;
+                font-weight: bolder;
+                letter-spacing: 5px;
+                color: whitesmoke;
+            }
+            .desc {
+                font-weight: 300;
+                color: whitesmoke;
+                strong {
+                    color: $secondary-color;
+                }
+            }
+            .medsos {
+                margin-top: 20px;
+                font-size: 1.1em;
+                font-weight: 300;
+                color: whitesmoke;
+            }
+            .medsos-menu {
+                margin-top: 5px;
+                .medsos-list {
+                    letter-spacing: 15px;
+                    font-size: 1.5em;
+                    text-decoration: none;
+                    color: rgba(255, 255, 255, 0.7);
+                }
+                .medsos-list:hover {
+                    color: whitesmoke;
+                }
+            }
+            button {
+                margin-top: 30px;
+            }
+        }
+        img {
+            height: 300px;
+            border: 2px solid $premier-color;
+            border-radius: 50%;
+            box-shadow: -100px 50px $secondary-color;
+        }
+    }
+}
+// akhir section abour
+
+// responsive max-width 800px 
+@media ( max-width: 800px ) {
+    nav {
+        .nav-container {
+            ul {
+                position: absolute;
+                top: 0;
+                left: 0;
+                padding-top: 8vh;
+                padding-bottom: 1vh;
+                width: 100%;
+                z-index: 2;
+                display: flex;
+                flex-direction: column;
+                background-color: $secondary-color;
+                line-height: 50px;
+                box-shadow: 1px 2px 10px $premier-color;
+                transition: all 0.5s ease-in-out;
+                clip-path: ellipse(20px 20px at 89% 12%);
+                li {
+                    a {
+                        font-size: 1.5em;
+                    }
+                    a:hover {
+                        border-bottom: 2px solid whitesmoke;
+                    }
+                    a::after {
+                        display: none;
+                    }
+                }
+            }
+            ul.open {
+                clip-path: ellipse(150% 150% at 100% 100%);
+                background-color: $secondary-color;
+                button {
+                    border: 2px solid whitesmoke;
+                    width: 90%;
+                    padding: 10px;
+                    border-radius: 5px;
+                    font-size: 1.2em;
+                    background-color: none;
+                }
+            }
+            .hamburger {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                padding: 5px;
+                z-index: 3;
+                transition: all 0.5s ease-in-out;
+                .list {
+                    width: 100%;
+                    height: 3px;
+                    background-color: whitesmoke;
+                    border-radius: 10px;
+                    transition: all 0.5s ease-in-out;
+                }
+                .list:first-child {
+                    transform: translate(0, -5px);
+                }
+                .list:nth-child(2) {
+                    transform: translate(-15px, 0);
+                }
+                .list:last-child {
+                    transform: translate(-5px, 5px);
+                }
+            }
+            .hamburger.open {
+                border: 2px solid whitesmoke;
+                border-radius: 3px;
+                .list {
+                    margin-left: 3px;
+                }
+                .list:first-child {
+                    transform:rotate(45deg) translate(1px, 3px);
+                }
+                .list:nth-child(2) {
+                    transform: translate(0, 0);
+                    opacity: 0;
+                }
+                .list:last-child {
+                    transform:rotate(-45deg) translate(1px, -3px);
+                } 
+            }
+        }
+    }
+    section {
+        header {
+            img {
+                height: 250px;
+            }
+        }
+    }
+}
+
+// resposive max-width 576px
+@media ( max-width: 576px ) {
+    section {
+        header {
+            .container-header {
+                .name {
+                    font-size: 5em;
+                }
+            }
+            img {
+                height: 200px;
+                transform: translate(115%,-70%);
+            }
+        }
+    }
+}
+
