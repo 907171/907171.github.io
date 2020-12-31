@@ -94,8 +94,8 @@ section {
             }
             .name {
                 font-size: 6em;
-                font-weight: bolder;
-                letter-spacing: 5px;
+                font-weight: bold;
+                letter-spacing: 3px;
                 color: whitesmoke;
             }
             .desc {
@@ -167,10 +167,6 @@ section {
                         display: none;
                     }
                 }
-            }
-            ul.open {
-                clip-path: ellipse(150% 150% at 100% 100%);
-                background-color: $secondary-color;
                 button {
                     border: 2px solid whitesmoke;
                     width: 90%;
@@ -179,6 +175,10 @@ section {
                     font-size: 1.2em;
                     background-color: none;
                 }
+            }
+            ul.open {
+                clip-path: ellipse(150% 150% at 100% 100%);
+                background-color: $secondary-color;
             }
             .hamburger {
                 display: flex;

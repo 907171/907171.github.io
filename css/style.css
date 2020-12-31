@@ -135,8 +135,8 @@ section header .container-header .hello {
 
 section header .container-header .name {
   font-size: 6em;
-  font-weight: bolder;
-  letter-spacing: 5px;
+  font-weight: bold;
+  letter-spacing: 3px;
   color: whitesmoke;
 }
 
@@ -217,18 +217,18 @@ section header img {
   nav .nav-container ul li a::after {
     display: none;
   }
-  nav .nav-container ul.open {
-    -webkit-clip-path: ellipse(150% 150% at 100% 100%);
-            clip-path: ellipse(150% 150% at 100% 100%);
-    background-color: #e84545;
-  }
-  nav .nav-container ul.open button {
+  nav .nav-container ul button {
     border: 2px solid whitesmoke;
     width: 90%;
     padding: 10px;
     border-radius: 5px;
     font-size: 1.2em;
     background-color: none;
+  }
+  nav .nav-container ul.open {
+    -webkit-clip-path: ellipse(150% 150% at 100% 100%);
+            clip-path: ellipse(150% 150% at 100% 100%);
+    background-color: #e84545;
   }
   nav .nav-container .hamburger {
     display: -webkit-box;
